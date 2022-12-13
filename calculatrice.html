@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>calculator</h1>
+    <form action="" onsubmit="return false" class="form">
+        <label for="" >Nombre 1 :</label>
+        <input type="text" id="txta" name="txta" ><br><br>
+        <label for="" >Nombre 2 :</label>
+        <input type="text" id="txtb" name="txtb" ><br>
+
+        <button onclick=" calcul('+')" class="btnn">+</button>&nbsp;
+        <button onclick="calcul('-')" class="btnn">-</button>&nbsp;
+        <button onclick="calcul('*')" class="btnn">*</button>&nbsp;
+        <button onclick="calcul('/')" class="btnn">/</button>&nbsp;
+        <button onclick="Clear()" class="btnn">C</button>
+
+        <br>
+        <br>
+
+        <label for="" > Resultat : </label>
+        <input type="text" id="resultat" name="resultat"  disabled>
+    </form>
+    <script>
+        function calcul(x)
+        {
+            var a=eval(document.getElementById("txta").value);
+            var b=parseFloat(document.getElementById("txtb").value);
+            var res
+            switch (x) {
+                case '+':res=a+b;c="la somme est =";break;
+                case '-':res=a-b;c="la defirence est =";break;
+                case '*':res=a*b;c="le produit est =";break;
+                case '/':res=a/b;c="la division est =";break;
+            }
+            document.getElementById("resultat").value=c+" "+res
+        }
+        function Clear()
+        {
+            document.getElementById("resultat").value = "";
+            document.getElementById("txta").value = "";
+            document.getElementById("txtb").value = "";
+           
+        }
+    </script> 
+</body>
+
+</html>
